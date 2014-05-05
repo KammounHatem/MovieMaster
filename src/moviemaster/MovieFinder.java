@@ -8,6 +8,8 @@ package moviemaster;
 import java.io.Writer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.accessibility.AccessibleRole;
+import javax.swing.JOptionPane;
 import jess.*;
 import jess.awt.TextAreaWriter;
 /**
@@ -33,88 +35,80 @@ public class MovieFinder extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jComboBox1 = new javax.swing.JComboBox();
-        jComboBox2 = new javax.swing.JComboBox();
-        jComboBox3 = new javax.swing.JComboBox();
-        jComboBox4 = new javax.swing.JComboBox();
+        acteurbox = new javax.swing.JComboBox();
+        genreBox = new javax.swing.JComboBox();
+        contenubox = new javax.swing.JComboBox();
+        annebox = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox5 = new javax.swing.JComboBox();
+        paysbox = new javax.swing.JComboBox();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox6 = new javax.swing.JComboBox();
+        producteurbox = new javax.swing.JComboBox();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         resultat = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "a" }));
-        jComboBox1.setName("acteur"); // NOI18N
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(160, 40, 108, 20);
+        acteurbox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hugh Jackman", "Christian Bale", "Shia LaBeouf", "Esther Comar", "Will Smith", "Michael Moore", "Leonardo Dicaprio", "Tom Hanks", "Tobey Maguire", "Leonardo Dicaprio", "Anne Hathaway", "Jude Law", "Robert Downey Jr.", "Robert Downey", "Zach Galifianakis", "Scarlett Johansson", "Jennifer Lawrence", "Tom Cruise", "Treat Williams", "Jesse Eisenberg", "Mark Wahlberg", "Daniel Radcliffe", "Jason Statham", "Harrison Ford", "Henry Cavi", "Macaulay Culkin", "Shia Labeouf", "Brad Pit" }));
+        acteurbox.setName("acteur"); // NOI18N
+        getContentPane().add(acteurbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 108, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "a" }));
-        jComboBox2.setName("genre"); // NOI18N
-        getContentPane().add(jComboBox2);
-        jComboBox2.setBounds(431, 38, 135, 20);
+        genreBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Fantasy", "Aventure", "Comedie", "Action", "Magie", "Thriller", "Bibliographie", "Science-fiction", "Drame", "Romance", "Documentaire" }));
+        genreBox.setName("genre"); // NOI18N
+        getContentPane().add(genreBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, 135, -1));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "a" }));
-        jComboBox3.setName("contenu"); // NOI18N
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+        contenubox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "rêve", "banque", "adolescent", "enfant perdu", "Zeus", "espace", "mini cooper", "sorcier", "hospital", "facebook", "samurai", "pearl harbor", "espion", "dans une île", "organe", "voyage", "hero", "robot", "love story", "zombie", "poursuite", "spider", "general motors", "donation", "amour", "magie" }));
+        contenubox.setName("contenu"); // NOI18N
+        contenubox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
+                contenuboxActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox3);
-        jComboBox3.setBounds(160, 130, 108, 20);
+        getContentPane().add(contenubox, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 108, -1));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "a" }));
-        jComboBox4.setName("annee"); // NOI18N
-        getContentPane().add(jComboBox4);
-        jComboBox4.setBounds(440, 130, 135, 20);
+        annebox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1977", "1980", "1989", "1990", "1996", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", " " }));
+        annebox.setName("annee"); // NOI18N
+        annebox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                anneboxActionPerformed(evt);
+            }
+        });
+        getContentPane().add(annebox, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 120, 135, -1));
 
         jLabel1.setText("Acteur");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(50, 50, 32, 14);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 44, 80, 20));
 
         jLabel2.setText("Genre");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(340, 40, 60, 20);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 40, 80, 20));
 
         jLabel3.setText("Contenu");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(50, 130, 41, 14);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 70, 20));
 
         jLabel4.setText("Anneé");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(340, 130, 60, 20);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 90, 20));
 
         jLabel5.setText("Nom de Film :");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(90, 330, 90, 14);
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 110, 30));
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "a" }));
-        jComboBox5.setName("pays"); // NOI18N
-        getContentPane().add(jComboBox5);
-        jComboBox5.setBounds(160, 210, 110, 20);
+        paysbox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "USA", "Angleterre", "Japon", "Prage", "Sydney", "Secteur 13", "mer", "France" }));
+        paysbox.setName("pays"); // NOI18N
+        getContentPane().add(paysbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 110, -1));
 
         jLabel6.setText("Pays");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(50, 214, 60, 20);
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 70, 30));
 
         jLabel7.setText("Producteur");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(340, 210, 60, 14);
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 60, 20));
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "a" }));
-        jComboBox6.setName("producteur"); // NOI18N
-        getContentPane().add(jComboBox6);
-        jComboBox6.setBounds(440, 210, 140, 20);
+        producteurbox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Christopher Nolan", "D.J. Caruso", "Peter Berg", "Gabriele Muccino", "Michael Moore", "James Cameron", "Steven Spielberg", "Sam Raimi", "Francis Lawrence", "Lone Scherfig", "Chris Brigham", "Jon Favreau", "Joss Whedon", "Todd Phillips", "Michael Bay", "J.J. Abrams", "Brian De Palma", "Chris Columbus", "Edward Zwick", "Jerry Weintraub", "David Leo Fincher", "Robbie Robertson", "David Heyman", "Gianni Nunnari", "Gary Kurtz", "Donald De Line" }));
+        producteurbox.setName("producteur"); // NOI18N
+        getContentPane().add(producteurbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 140, -1));
 
         jButton1.setText("Chercher");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -122,15 +116,13 @@ public class MovieFinder extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(290, 290, 100, 23);
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 100, -1));
 
         resultat.setColumns(20);
         resultat.setRows(5);
         jScrollPane1.setViewportView(resultat);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(260, 330, 166, 96);
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -138,12 +130,14 @@ public class MovieFinder extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
             Film f= new Film();
-            f.setActeur("a");
-            f.setAnnee("a");
-            f.setContenu("a");
-            f.setGenre("a");
-            f.setPays("a");
-            f.setProducteur("a");
+            
+            
+            f.setActeur(acteurbox.getSelectedItem().toString());
+            f.setAnnee(annebox.getSelectedItem().toString());
+            f.setContenu(contenubox.getSelectedItem().toString());
+            f.setGenre(genreBox.getSelectedItem().toString());
+            f.setPays(paysbox.getSelectedItem().toString());
+            f.setProducteur(producteurbox.getSelectedItem().toString());
             Rete engine = new Rete();
             
             engine.batch("movie.clp");
@@ -153,6 +147,10 @@ public class MovieFinder extends javax.swing.JFrame {
             
           
             engine.run();
+            if(f.getNom()==null){
+                JOptionPane.showMessageDialog(null,"FILM n'exite pas");
+                
+            }
             resultat.setText(f.getNom());
             
         } catch (JessException ex) {
@@ -161,9 +159,13 @@ public class MovieFinder extends javax.swing.JFrame {
          
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+    private void contenuboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contenuboxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox3ActionPerformed
+    }//GEN-LAST:event_contenuboxActionPerformed
+
+    private void anneboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anneboxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_anneboxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,13 +203,11 @@ public class MovieFinder extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox acteurbox;
+    private javax.swing.JComboBox annebox;
+    private javax.swing.JComboBox contenubox;
+    private javax.swing.JComboBox genreBox;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JComboBox jComboBox3;
-    private javax.swing.JComboBox jComboBox4;
-    private javax.swing.JComboBox jComboBox5;
-    private javax.swing.JComboBox jComboBox6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -216,6 +216,8 @@ public class MovieFinder extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox paysbox;
+    private javax.swing.JComboBox producteurbox;
     private javax.swing.JTextArea resultat;
     // End of variables declaration//GEN-END:variables
 }
